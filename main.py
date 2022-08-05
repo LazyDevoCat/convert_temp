@@ -1,6 +1,3 @@
-"""
-Main file
-"""
 import argparse
 
 
