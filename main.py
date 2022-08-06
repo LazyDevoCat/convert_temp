@@ -1,6 +1,10 @@
 import argparse
 
 
+CELSIUM_INPUT = ['celsius', 'cels', 'cel', '-c', 'c']
+FAH_INPUT = ['fahrenheit', 'fahren', 'far', '-f', 'f']
+QUIT_INPUT = ['quit', 'q']
+
 def cel_to_fahren(tempreture_in_celsium):
     """
     Take temperature in Celsius and convert to Fahrenheit
@@ -38,13 +42,21 @@ elif args.celsius:
     print(cel_to_fahren(args.celsius))
 else:
     answer = str(input("What teamprute you want convert?: ")).lower()
+
+    while answer not in (CELSIUM_INPUT and FAH_INPUT):
+        answer = str(input("What teamprute you want convert?: ")).lower()
+        if answer in QUIT_INPUT:
+            break
     
-    if answer in ['celsius', 'cels', 'cel', '-c']:  # Convert from Celsius to Fahrenheit
+    
+    if answer in CELSIUM_INPUT:  # Convert from Celsius to Fahrenheit
         celsium = float(input("Provide tempruture in Celsius: "))
         print(cel_to_fahren(celsium))
     
-    elif answer in ['fahrenheit', 'fahren', 'far', '-f']:  # Convert from Fahrenheit to Celsius
+    elif answer in FAH_INPUT:  # Convert from Fahrenheit to Celsius
         fahrenheit = float(input("Provide tempruture in Fahrenheit: "))
         print(fahren_to_cel(fahrenheit))
+
+    
     else:
         print("You provide nothing :) ")
