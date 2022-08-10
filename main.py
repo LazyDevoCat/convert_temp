@@ -4,7 +4,7 @@ from converter.converter import *
 
 CELSIUM_INPUT = ['celsius', 'cels', 'cel', '-c', 'c']
 FAH_INPUT = ['fahrenheit', 'fahren', 'far', '-f', 'f']
-QUIT_INPUT = ['quit', 'q']
+QUIT_INPUT = ['quit', 'q', 'exit']
 
 
 parser = argparse.ArgumentParser()
