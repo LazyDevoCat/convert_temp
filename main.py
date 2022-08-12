@@ -1,6 +1,6 @@
+# -*- encoding: utf-8 -*-
 import argparse
 from converter.converter import *
-
 
 CELSIUM_INPUT = ['celsius', 'cels', 'cel', '-c', 'c']
 FAH_INPUT = ['fahrenheit', 'fahren', 'far', '-f', 'f']
@@ -31,9 +31,9 @@ else:
             break
 
     if answer in CELSIUM_INPUT:  # Convert from Celsius to Fahrenheit
-        celsius = float(input("Provide temperature in Celsius: "))
-        print(cel_to_fahren(celsius))
+        celsius = input("Provide temperature in Celsius: ")
+        print(cel_to_fahren(float(celsius)))
 
     if answer in FAH_INPUT:  # Convert from Fahrenheit to Celsius
-        fahrenheit = float(input("Provide temperature in Fahrenheit: "))
-        print(fahren_to_cel(fahrenheit))
+        fahrenheit = input("Provide temperature in Fahrenheit: ")
+        print(fahren_to_cel(float(fahrenheit)))
