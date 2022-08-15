@@ -24,9 +24,9 @@ TDB
 
 TDB
 
-#### Unitests
-in root of the project:
-> python -m unittest
+#### Unit tests
+For launching unit tests in root of the project:  
+`python -m unittest`
 
 
 ### License

@@ -4,11 +4,12 @@ import unittest
 from converter.converter import *
 
 
-# Testing function cel_to_fahren
-
-class test_cel_to_fahren(unittest.TestCase):
+class temperature_conversion(unittest.TestCase):
     
     def test_cel_to_fahren(self):
+        """
+        # Testing function cel_to_fahren
+        """
         self.assertEqual(cel_to_fahren(20), 68.0)
         self.assertEqual(cel_to_fahren(20.0), 68.0)
         self.assertEqual(cel_to_fahren(0), 32.0)
@@ -17,6 +18,9 @@ class test_cel_to_fahren(unittest.TestCase):
         self.assertEqual(cel_to_fahren(-40.0), -40.0)
     
     def test_fahren_to_cel(self):
+        """
+        # Testing function fahren_to_cel
+        """
         self.assertEqual(fahren_to_cel(32), 0.0)
         self.assertEqual(fahren_to_cel(32.0), 0.0)
         self.assertEqual(fahren_to_cel(0), -17.8, msg='ERROR')
