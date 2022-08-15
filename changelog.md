@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created validation value type in interactive mode.
 - Typing for the returned values in the methods.
 - file utils.py with supporting logic.
+- simple CI via GitHub Actions.
 
 ### Changed
 - Naming of methods.

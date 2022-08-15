@@ -1,0 +1,48 @@
+# This is a basic workflow
+
+name: CI-pipeline
+env:
+  APP_NAME    : "converter"
+  PACKAGE_NAME: "converter_app_${{ github.sha }}"
+
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+#    strategy:
+#      max-parallel: 2
+#      matrix:
+#        python-version: [3.6, 3.8]
+#    env:
+#      VAR1: "123"
+#      VAR2: "Job value in Job"
+
+    steps:
+      - name: GIT clone repository
+        uses: action/checkout@v3
+
+      - name: Check environment
+        run: |
+          ls -la >> artifact.txt
+          echo "Application name is: ${{ env.APP_NAME }}" >> artifact.txt
+          echo "Application version is: $ {{ env.PACKAGE_NAME }}" >> artifact.txt
+          python -v >> artifact.txt
+
+      - name: Run test
+        run: |
+          python -m unittest >> artifact.txt
+#
+#  tests:
+#    - name: Test with unittest
+#      needs:
+#      run:
+#          python -m unittest
+
+
