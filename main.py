@@ -1,8 +1,8 @@
 # -*- encoding: utf-8 -*-
 import argparse
-from typing import Any
-
 from converter.converter import *
+from converter.utils import is_float
+
 
 CELSIUM_INPUT = ['celsius', 'cels', 'cel', '-c', 'c']
 FAH_INPUT = ['fahrenheit', 'fahren', 'far', '-f', 'f']
@@ -14,18 +14,6 @@ parser.add_argument("-f", "--fahrenheit", help="Take temperature in Fahrenheit a
 parser.add_argument("-c", "--celsius", help="Take temperature in Celsius and convert to Fahrenheit", type=float)
 
 args = parser.parse_args()
-
-
-def is_float(arg: Any) -> bool:
-    """
-    Check if the user's input convertible to float type
-    """
-    try:
-        float(arg)
-        return True
-    except ValueError:
-        return False
-
 
 if args.verbose:
     print(str(args) + " It's verbose argument")

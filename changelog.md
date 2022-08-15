@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created unit tests.
 - Created validation value type in interactive mode.
 - Typing for the returned values in the methods.
+- file utils.py with supporting logic.
 
 ### Changed
 - Naming of methods.
@@ -18,7 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Some grammatical issues and typos.
 - Rounding input.
-
 
 
 ## [1.0.1](https://github.com/MariaMaximova/convert_temp/tree/v1.0.1) - 2022 - August - 10
@@ -41,8 +41,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Some grammatical issues and typos
-
-
-
-
-
