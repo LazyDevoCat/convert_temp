@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 from setuptools import setup
 
 with open("Readme.md", "r") as readme_file:
