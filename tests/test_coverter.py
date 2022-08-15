@@ -4,7 +4,7 @@ import unittest
 from converter.converter import *
 
 
-class temperature_conversion(unittest.TestCase):
+class test_temperature_conversion(unittest.TestCase):
     
     def test_cel_to_fahren(self):
         """
