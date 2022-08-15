@@ -4,17 +4,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
-##  - 2022 
 
 ### Added
 - cnagelog.md file with description all versions.
 - Issues templates in [GitHub](https://github.com/MariaMaximova/convert_temp/issues/new/choose) page.
 - Created unit tests.
-- Created validation value type in interactive mode
+- Created validation value type in interactive mode.
+- Typing for the returned values in the methods.
+
+### Changed
+- Naming of methods.
 
 ### Fixed
 - Some grammatical issues and typos.
 - Rounding input.
+
 
 
 ## [1.0.1](https://github.com/MariaMaximova/convert_temp/tree/v1.0.1) - 2022 - August - 10

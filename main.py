@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
 import argparse
+from typing import Any
+
 from converter.converter import *
 
 CELSIUM_INPUT = ['celsius', 'cels', 'cel', '-c', 'c']
@@ -14,13 +16,13 @@ parser.add_argument("-c", "--celsius", help="Take temperature in Celsius and con
 args = parser.parse_args()
 
 
-def check_number(arg):
+def is_float(arg: Any) -> bool:
     """
     Check if the user's input convertible to float type
     """
     try:
         float(arg)
-        return float(arg)
+        return True
     except ValueError:
         return False
 
@@ -29,28 +31,28 @@ if args.verbose:
     print(str(args) + " It's verbose argument")
 elif args.fahrenheit:
     # print(f"{args.fahrenheit} Fahrenheit")
-    print(fahren_to_cel(args.fahrenheit))
+    print(fahrenheit_to_celsius(args.fahrenheit))
 elif args.celsius:
     # print(f"{args.celsius} Celsius")
-    print(cel_to_fahren(args.celsius))
+    print(celsius_to_fahrenheit(args.celsius))
 else:
     answer = str(input("What temperature you want convert?: ")).lower()
     
     while answer not in (CELSIUM_INPUT + FAH_INPUT):
         answer = str(input("What temperature you want convert?: ")).lower()
         if answer in QUIT_INPUT:
-            break
+            quit()
     
     if answer in CELSIUM_INPUT:  # Convert from Celsius to Fahrenheit
         celsius = input("Provide temperature in Celsius: ")
-        if check_number(celsius):
-            print(cel_to_fahren(float(celsius)))
+        if is_float(celsius):
+            print(celsius_to_fahrenheit(float(celsius)))
         else:
             print(f"ERROR: {celsius} is not convertible to float type")
     
     if answer in FAH_INPUT:  # Convert from Fahrenheit to Celsius
         fahrenheit = input("Provide temperature in Fahrenheit: ")
-        if check_number(fahrenheit):
-            print(fahren_to_cel(float(fahrenheit)))
+        if is_float(fahrenheit):
+            print(fahrenheit_to_celsius(float(fahrenheit)))
         else:
             print(f"ERROR: {fahrenheit} is not convertible to float type")
