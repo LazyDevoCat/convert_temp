@@ -27,19 +27,19 @@ elif args.celsius:
     print(celsius_to_fahrenheit(args.celsius))
 else:
     answer = str(input("What temperature you want convert?: ")).lower()
-    
+
     while answer not in (CELSIUM_INPUT + FAH_INPUT):
         answer = str(input("What temperature you want convert?: ")).lower()
         if answer in QUIT_INPUT:
             quit()
-    
+
     if answer in CELSIUM_INPUT:  # Convert from Celsius to Fahrenheit
         celsius = input("Provide temperature in Celsius: ")
         if is_float(celsius):
             print(celsius_to_fahrenheit(float(celsius)))
         else:
             print(f"ERROR: {celsius} is not convertible to float type")
-    
+
     if answer in FAH_INPUT:  # Convert from Fahrenheit to Celsius
         fahrenheit = input("Provide temperature in Fahrenheit: ")
         if is_float(fahrenheit):
