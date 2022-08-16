@@ -22,10 +22,10 @@ jobs:
       - name: GIT clone repository
         uses: actions/checkout@v3
 
-#      - name: Install flake
-#        run: |
-#          pip install flake8
-#          flake .
+      - name: Install flake
+        run: |
+          pip install flake8
+          flake8 .
 
       - name: Check environment
         run: |
