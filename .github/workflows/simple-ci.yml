@@ -1,4 +1,6 @@
 # This is a basic workflow
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+
 
 name: CI-pipeline
 env:
@@ -8,10 +10,10 @@ env:
 
 # Controls when the workflow will run
 on:
-  push:
-    branches: [ "main", "dev" ]
   pull_request:
     branches: [ "main", "dev" ]
+  push:
+    branches-ignore: [ "main", "dev" ]
 
 jobs:
   build-app:
