@@ -22,12 +22,15 @@ jobs:
       - name: GIT clone repository
         uses: actions/checkout@v3
 
+      - name: Install pylint
+        run: |
+          pip install pylint
+          pylint temp_convertor
+
       - name: Check environment
         run: |
-          ls -la >> artifact.txt
           echo "Application name is: ${{ env.APP_NAME }}" >> artifact.txt
           echo "Application version is: $ {{ env.PACKAGE_NAME }}" >> artifact.txt
-          python -v >> artifact.txt
 
       - name: Run test
         run: |
