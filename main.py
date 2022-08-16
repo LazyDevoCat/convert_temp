@@ -9,10 +9,14 @@ QUIT_INPUT = ['quit', 'q', 'exit']
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbose", help="It just return your argument")
-parser.add_argument("-f", "--fahrenheit", type=float,
-                    help="Take temperature in Fahrenheit and convert to Celsius")
-parser.add_argument("-c", "--celsius", type=float,
-                    help="Take temperature in Celsius and convert to Fahrenheit")
+parser.add_argument(
+    "-f", "--fahrenheit", type=float,
+    help="Take temperature in Fahrenheit and convert to Celsius"
+)
+parser.add_argument(
+    "-c", "--celsius", type=float,
+    help="Take temperature in Celsius and convert to Fahrenheit"
+)
 
 args = parser.parse_args()
 
