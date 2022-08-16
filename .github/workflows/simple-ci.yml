@@ -22,10 +22,10 @@ jobs:
       - name: GIT clone repository
         uses: actions/checkout@v3
 
-      - name: Install pylint
+      - name: Install flake
         run: |
-          pip install pylint
-          pylint temp_convertor\main.py
+          pip install flake8
+          flake .
 
       - name: Check environment
         run: |
