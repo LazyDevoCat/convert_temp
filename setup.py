@@ -10,16 +10,16 @@ with open("versions.txt", "r") as versions_file:
 setup(
     name="converter",
     version=ver,
-    
+
     author="Maria Maksimova",
     author_email="maryia.maksimava@yahoo.com",
-    
+
     description="A package for converting temperature from Celsius to Fahrenheit and vise versa",
     license="MIT License",
     long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/MariaMaximova/convert_temp",
-    
+
     python_requires=">=3.7",
     classifiers=[
         "Development Status :: Stable",
