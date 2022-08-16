@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 import argparse
-from converter.converter import *
+from converter.converter import fahrenheit_to_celsius, celsius_to_fahrenheit
 from converter.utils import is_float
 
 
@@ -10,8 +10,10 @@ QUIT_INPUT = ['quit', 'q', 'exit']
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbose", help="It just return your argument")
-parser.add_argument("-f", "--fahrenheit", help="Take temperature in Fahrenheit and convert to Celsius", type=float)
-parser.add_argument("-c", "--celsius", help="Take temperature in Celsius and convert to Fahrenheit", type=float)
+parser.add_argument("-f", "--fahrenheit",
+                    help="Take temperature in Fahrenheit and convert to Celsius", type=float)
+parser.add_argument("-c", "--celsius",
+                    help="Take temperature in Celsius and convert to Fahrenheit", type=float)
 
 args = parser.parse_args()
 

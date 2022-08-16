@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 import unittest
 
-from converter.converter import *
+from converter.converter import celsius_to_fahrenheit, fahrenheit_to_celsius
 from converter.utils import is_float
 
 
