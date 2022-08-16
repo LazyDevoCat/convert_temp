@@ -16,17 +16,9 @@ on:
 jobs:
   build-app:
     runs-on: ubuntu-latest
-#    strategy:
-#      max-parallel: 2
-#      matrix:
-#        python-version: [3.6, 3.8]
-#    env:
-#      VAR1: "123"
-#      VAR2: "Job value in Job"
-
     steps:
       - name: GIT clone repository
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Check environment
         run: |
@@ -37,8 +29,18 @@ jobs:
 
       - name: Run test
         run: |
+          date -R >> artifact.txt
           python -m unittest >> artifact.txt
-#
+
+#    strategy:
+#      max-parallel: 2
+#      matrix:
+#        python-version: [3.6, 3.8]
+#    env:
+#      VAR1: "123"
+#      VAR2: "Job value in Job"
+
+
 #  tests:
 #    - name: Test with unittest
 #      needs:
