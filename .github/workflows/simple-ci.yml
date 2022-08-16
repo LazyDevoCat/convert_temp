@@ -24,7 +24,7 @@ jobs:
 
       - name: Install flake
         run: |
-          pip install flake8
+          python -m pip install flake8
           flake8 .
 
       - name: Check environment
