@@ -11,16 +11,22 @@ env:
 # Controls when the workflow will run
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "dev" ]
   push:
     branches-ignore: [ "main", "dev" ]
 
 jobs:
-  build-app:
+  build_app:
     runs-on: ubuntu-latest
     steps:
-      - name: GIT clone repository
+      - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Check environment
+        run: |
+          python --version
+          ls -la
+          echo "Application name is: ${{ env.APP_NAME }} and version is ${{ env.PACKAGE_NAME }}" >> artifact.txt
 
       - name: Install flake and check code-style
         run: |
@@ -32,36 +38,7 @@ jobs:
           python -m pip install bandit
           bandit -r .
 
-      - name: Check environment
-        run: |
-          python --version
-          ls -la
-          echo "Application name is: ${{ env.APP_NAME }}" >> artifact.txt
-          echo "Application version is: $ {{ env.PACKAGE_NAME }}" >> artifact.txt
-
       - name: Run test
         run: |
           date -R >> artifact.txt
           python -m unittest >> artifact.txt
-
-
-
-
-
-
-#    strategy:
-#      max-parallel: 2
-#      matrix:
-#        python-version: [3.6, 3.8]
-#    env:
-#      VAR1: "123"
-#      VAR2: "Job value in Job"
-
-
-#  tests:
-#    - name: Test with unittest
-#      needs:
-#      run:
-#          python -m unittest
-
-

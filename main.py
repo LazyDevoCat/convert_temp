@@ -8,7 +8,7 @@ FAH_INPUT = ['fahrenheit', 'fahren', 'far', '-f', 'f']
 QUIT_INPUT = ['quit', 'q', 'exit']
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-v", "--verbose", help="It just return your argument")
+# parser.add_argument("-v", "--verbose", help="It just return your argument")
 parser.add_argument(
     "-f", "--fahrenheit", type=float,
     help="Take temperature in Fahrenheit and convert to Celsius"
