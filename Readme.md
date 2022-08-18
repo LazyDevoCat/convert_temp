@@ -9,6 +9,7 @@ This is a cli tool for converting temperature from Celsius to Fahrenheit and vis
 - [x] Ability to use this tool in CLI and interactive mode.
 - [x] Checks input in the interactive mode.
 - [x] Create unit tests.
+- [x] Create simple CI.
 - [ ] Create issues for help me to develop my skills 
 
 ### Tech

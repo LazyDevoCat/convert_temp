@@ -2,7 +2,8 @@
 """
 This file contains converter logic
 
-1. Convert temperature (converting from Fahrenheit to Celsius and vice versa are available)
+1. Convert temperature:
+    Converting from Fahrenheit to Celsius and vice versa are available
 """
 
 # Convert temperature
