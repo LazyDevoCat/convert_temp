@@ -18,36 +18,46 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "temperature", type=float,
-    help="temperature", action="store", nargs=1
+    "-f", "--fahrenheit", type=float,
+    help="Take temperature in Fahrenheit and convert to Celsius"
+)
+parser.add_argument(
+    "-c", "--celsius", type=float,
+    help="Take temperature in Celsius and convert to Fahrenheit"
 )
 
-scale_group = parser.add_mutually_exclusive_group(required=True)
-
-scale_group.add_argument(
-    "-f", "--fahrenheit", action="store_true",
-    help="use flag -f(--fahrenheit) and provide one value for converting"
-)
-
-scale_group.add_argument(
-    "-c", "--celsius", action="store_true",
-    help="use flag -c(--celsius) and provide one value for converting"
-)
+# parser.add_argument(
+#     "temperature", type=float,
+#     help="temperature", action="store", nargs=1
+# )
+#
+# scale_group = parser.add_mutually_exclusive_group(required=True)
+#
+# scale_group.add_argument(
+#     "-f", "--fahrenheit", action="store_true",
+#     help="use flag -f(--fahrenheit) and provide one value for converting"
+# )
+#
+# scale_group.add_argument(
+#     "-c", "--celsius", action="store_true",
+#     help="use flag -c(--celsius) and provide one value for converting"
+# )
 
 args = parser.parse_args()
-print(sys.argv)
-print(args)
-print(f"{args.fahrenheit} Fahrenheit")
+# print(sys.argv)
+# print(args)
+# print(f"{args.fahrenheit} Fahrenheit")
 
 if args.verbose:
     print(str(args) + " It's verbose argument")
+if args.fahrenheit and args.celsius:
+    print("IT IS PROHIBITED!")
+    quit()
 if args.fahrenheit:
-    print(f"{args.fahrenheit} Fahrenheit in the logic")
+    # print(f"{args.fahrenheit} Fahrenheit in the logic")
     print(fahrenheit_to_celsius(args.fahrenheit))
-elif args.celsius:
+if args.celsius:
     print(celsius_to_fahrenheit(args.celsius))
-elif args.fahrenheit and args.celsius:
-    print("IT IS PROHIBITED! ")
 else:
     answer = str(input("What temperature you want convert?: ")).lower()
 

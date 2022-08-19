@@ -9,21 +9,27 @@ This file contains converter logic
 # Convert temperature
 
 
-def celsius_to_fahrenheit(temperature_in_celsius: float) -> float:
+def celsius_to_fahrenheit(temperature_in_celsius: float) -> float | str:
     """
     Take temperature in Celsius and convert to Fahrenheit
     Temp: 20 C
     20 * (9/5) + 32 = 68 F
     """
-    fahrenheit = round(((temperature_in_celsius * (9 / 5)) + 32), 1)
-    return fahrenheit
+    if temperature_in_celsius < -273.15:
+        return "Error"
+    else:
+        fahrenheit = round(((temperature_in_celsius * (9 / 5)) + 32), 1)
+        return fahrenheit
 
 
-def fahrenheit_to_celsius(temperature_in_fahrenheit: float) -> float:
+def fahrenheit_to_celsius(temperature_in_fahrenheit: float) -> float | str:
     """
     Take temperature in Fahrenheit and convert to Celsius
     Temp: 68 F
     (5/9) * (68 - 32) = 20 C
     """
-    celsius = round((5 / 9) * (temperature_in_fahrenheit - 32), 1)
-    return celsius
+    if temperature_in_fahrenheit < -459.67:
+        return "Error"
+    else:
+        celsius = round((5 / 9) * (temperature_in_fahrenheit - 32), 1)
+        return celsius
