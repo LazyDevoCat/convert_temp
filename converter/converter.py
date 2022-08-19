@@ -4,7 +4,7 @@ This file contains converter logic
 
 1. Convert temperature:
     Converting from Fahrenheit to Celsius and vice versa are available
-    
+
 Raise taken here
 https://www.pythontutorial.net/python-oop/python-custom-exception/
 """
