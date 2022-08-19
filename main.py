@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 import argparse
+import sys
 from converter.converter import fahrenheit_to_celsius, celsius_to_fahrenheit
 from converter.utils import is_float
 
@@ -18,20 +19,20 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "-f", "--fahrenheit", type=float,  # nargs='+',
+    "-f", "--fahrenheit", type=float,
     help="Take temperature in Fahrenheit and convert to Celsius"
 )
 parser.add_argument(
-    "-c", "--celsius", type=float, #nargs='?',
+    "-c", "--celsius", type=float,
     help="Take temperature in Celsius and convert to Fahrenheit"
 )
 
 # parser.add_argument(
 #     "temperature", type=float,
-#     help="temperature", action="store", nargs=1
+#     help="temperature", action="store", nargs='?'
 # )
 #
-# scale_group = parser.add_mutually_exclusive_group(required=True)
+# scale_group = parser.add_mutually_exclusive_group(required=False)
 #
 # scale_group.add_argument(
 #     "-f", "--fahrenheit", action="store_true",
@@ -48,16 +49,21 @@ args = parser.parse_args()
 # print(args)
 # print(f"{args.fahrenheit} Fahrenheit")
 
-if args.verbose:
-    print(str(args) + " It's verbose argument")
-if args.fahrenheit and args.celsius:
+if sys.argv[3:]:
     print("IT IS PROHIBITED!")
     quit()
+if args.verbose:
+    print(str(args) + " It's verbose argument")
+# if args.fahrenheit and args.celsius:
+#     print("IT IS PROHIBITED!")
+#     quit()
 if args.fahrenheit is not None:
     # print(f"{args.fahrenheit} Fahrenheit in the logic")
     print(fahrenheit_to_celsius(args.fahrenheit))
+    quit()
 if args.celsius is not None:
     print(celsius_to_fahrenheit(args.celsius))
+    quit()
 else:
     answer = str(input("What temperature you want convert?: ")).lower()
 
