@@ -18,7 +18,7 @@ def celsius_to_fahrenheit(temperature_in_celsius: float) -> float:
     """
     if temperature_in_celsius < ABSOLUTE_ZERO_CEL:
         quit(f"Error temperature couldn't be lower than {ABSOLUTE_ZERO_CEL}")
-        # raise Exception(f"Error temperature couldn't be lower than {ABSOLUTE_ZERO_CEL}")
+#  raise Exception(f"Error values is lower than {ABSOLUTE_ZERO_CEL}")
 
     else:
         fahrenheit = round(((temperature_in_celsius * (9 / 5)) + 32), 1)
