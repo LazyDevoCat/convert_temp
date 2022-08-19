@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
 import argparse
-import sys
 from converter.converter import fahrenheit_to_celsius, celsius_to_fahrenheit
 from converter.utils import is_float
 
