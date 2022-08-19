@@ -2,7 +2,7 @@
 import unittest
 
 from converter.converter import \
-    celsius_to_fahrenheit, fahrenheit_to_celsius, TemperatureError
+    celsius_to_fahrenheit, fahrenheit_to_celsius  # , TemperatureError
 from converter.utils import is_float
 
 
@@ -18,7 +18,7 @@ class test_temperature_conversion(unittest.TestCase):
         self.assertEqual(celsius_to_fahrenheit(-10), 14.0)
         self.assertEqual(celsius_to_fahrenheit(-10.0), 14.0)
         self.assertEqual(celsius_to_fahrenheit(-40.0), -40.0)
-    
+
     # def test_raise_celsius_to_fahrenheit(self):
     #     self.assertRaises(TemperatureError, celsius_to_fahrenheit, -500.0)
 
