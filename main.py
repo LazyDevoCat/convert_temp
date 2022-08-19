@@ -18,11 +18,11 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "-f", "--fahrenheit", type=float,
+    "-f", "--fahrenheit", type=float,  # nargs='+',
     help="Take temperature in Fahrenheit and convert to Celsius"
 )
 parser.add_argument(
-    "-c", "--celsius", type=float,
+    "-c", "--celsius", type=float, #nargs='?',
     help="Take temperature in Celsius and convert to Fahrenheit"
 )
 
@@ -53,10 +53,10 @@ if args.verbose:
 if args.fahrenheit and args.celsius:
     print("IT IS PROHIBITED!")
     quit()
-if args.fahrenheit:
+if args.fahrenheit is not None:
     # print(f"{args.fahrenheit} Fahrenheit in the logic")
     print(fahrenheit_to_celsius(args.fahrenheit))
-if args.celsius:
+if args.celsius is not None:
     print(celsius_to_fahrenheit(args.celsius))
 else:
     answer = str(input("What temperature you want convert?: ")).lower()

@@ -5,7 +5,8 @@ This file contains converter logic
 1. Convert temperature:
     Converting from Fahrenheit to Celsius and vice versa are available
 """
-
+ABSOLUTE_ZERO_FAR = -459.67
+ABSOLUTE_ZERO_CEL = -273.15
 # Convert temperature
 
 
@@ -15,8 +16,10 @@ def celsius_to_fahrenheit(temperature_in_celsius: float) -> float:
     Temp: 20 C
     20 * (9/5) + 32 = 68 F
     """
-    if temperature_in_celsius < -273.15:
+    if temperature_in_celsius < ABSOLUTE_ZERO_CEL:
         quit("Error")
+        raise Exception("The temperature couldn't be lower than absolute zero")
+        
     else:
         fahrenheit = round(((temperature_in_celsius * (9 / 5)) + 32), 1)
         return fahrenheit
@@ -28,8 +31,9 @@ def fahrenheit_to_celsius(temperature_in_fahrenheit: float) -> float:
     Temp: 68 F
     (5/9) * (68 - 32) = 20 C
     """
-    if temperature_in_fahrenheit < -459.67:
+    if temperature_in_fahrenheit < ABSOLUTE_ZERO_FAR:
         quit("Error")
+        raise Exception("The temperature couldn't be lower than absolute zero")
     else:
         celsius = round(((5 / 9) * (temperature_in_fahrenheit - 32)), 1)
         return celsius

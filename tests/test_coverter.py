@@ -17,7 +17,8 @@ class test_temperature_conversion(unittest.TestCase):
         self.assertEqual(celsius_to_fahrenheit(-10), 14.0)
         self.assertEqual(celsius_to_fahrenheit(-10.0), 14.0)
         self.assertEqual(celsius_to_fahrenheit(-40.0), -40.0)
-        self.assertEqual(celsius_to_fahrenheit(-274), "Error")
+        self.assertEqual(celsius_to_fahrenheit(-274), "The temperature couldn't be lower than absolute zero",
+                         msg="Error with temperature beloved the abs zero")
 
     def test_fahrenheit_to_celsius(self):
         """
