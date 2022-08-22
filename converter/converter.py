@@ -10,14 +10,14 @@ https://www.pythontutorial.net/python-oop/python-custom-exception/
 """
 from typing import Any
 
-# ABSOLUTE_ZERO_FAR = -459.67
-# ABSOLUTE_ZERO_CEL = -273.15
+ABSOLUTE_ZERO_FAR = -459.67
+ABSOLUTE_ZERO_CEL = -273.15
 # Convert temperature
 
 
 class TemperatureError(Exception):
-    minimum_celsius = -273.15
-    minimum_fahrenheit = -459.67
+    minimum_celsius = ABSOLUTE_ZERO_CEL
+    minimum_fahrenheit = ABSOLUTE_ZERO_FAR
 
     def __init__(self, temperature):
         self.temperature = temperature
@@ -37,7 +37,7 @@ def celsius_to_fahrenheit(temperature_in_celsius: float) -> Any:
         if temperature_in_celsius < TemperatureError.minimum_celsius:
             raise TemperatureError(temperature_in_celsius)
     except TemperatureError as error:
-        return f"{error}: -273.15"
+        return f"{error}: {ABSOLUTE_ZERO_CEL}"
     else:
         return round(((temperature_in_celsius * (9 / 5)) + 32), 1)
 
@@ -52,7 +52,7 @@ def fahrenheit_to_celsius(temperature_in_fahrenheit: float) -> Any:
         if temperature_in_fahrenheit < TemperatureError.minimum_fahrenheit:
             raise TemperatureError(temperature_in_fahrenheit)
     except TemperatureError as error:
-        return f"{error}: -459.67"
+        return f"{error}: {ABSOLUTE_ZERO_FAR}"
     else:
         return round(((5 / 9) * (temperature_in_fahrenheit - 32)), 1)
 
