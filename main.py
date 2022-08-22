@@ -9,7 +9,6 @@ FAH_INPUT = ['fahrenheit', 'fahren', 'far', '-f', 'f']
 QUIT_INPUT = ['quit', 'q', 'exit']
 
 parser = argparse.ArgumentParser(
-    # usage="python main.py -f or -c [value]",
     description="Take temperature in Fahrenheit(Celsius) "
                 "and convert to Celsius(Fahrenheit)"
 )
@@ -45,18 +44,14 @@ parser.add_argument(
 # )
 
 args = parser.parse_args()
-# print(sys.argv)
-# print(args)
-# print(f"{args.fahrenheit} Fahrenheit")
 
 if sys.argv[3:]:
     print("IT IS PROHIBITED!")
     quit()
 if args.verbose:
-    print(str(args) + " It's verbose argument")
-# if args.fahrenheit and args.celsius:
-#     print("IT IS PROHIBITED!")
-#     quit()
+    print(f"You choose {sys.argv[1]} "
+          f"and provide: {sys.argv[2]}")
+    quit()
 if args.fahrenheit is not None:
     # print(f"{args.fahrenheit} Fahrenheit in the logic")
     print(fahrenheit_to_celsius(args.fahrenheit))
@@ -86,3 +81,6 @@ else:
             print(fahrenheit_to_celsius(float(fahrenheit)))
         else:
             print(f"ERROR: {fahrenheit} is not convertible to float type")
+
+
+# if __name__ == '__main__':
