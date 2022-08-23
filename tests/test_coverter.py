@@ -7,7 +7,7 @@ from converter.exception import TemperatureError
 
 
 class test_temperature_conversion(unittest.TestCase):
-    
+
     def test_celsius_to_fahrenheit(self):
         """
         Testing function celsius_to_fahrenheit
@@ -18,10 +18,10 @@ class test_temperature_conversion(unittest.TestCase):
         self.assertEqual(celsius_to_fahrenheit(-10), 14.0)
         self.assertEqual(celsius_to_fahrenheit(-10.0), 14.0)
         self.assertEqual(celsius_to_fahrenheit(-40.0), -40.0)
-    
+
     def test_raise_fahrenheit_to_celsius(self):
         self.assertRaises(TemperatureError, fahrenheit_to_celsius, -500.0)
-    
+
     def test_raise_celsius_to_fahrenheit(self):
         self.assertRaises(TemperatureError, celsius_to_fahrenheit, -500.0)
 
@@ -35,7 +35,7 @@ class test_temperature_conversion(unittest.TestCase):
         self.assertEqual(fahrenheit_to_celsius(-13), -25.0)
         self.assertEqual(fahrenheit_to_celsius(-13.0), -25.0)
         self.assertEqual(fahrenheit_to_celsius(-40), -40.0)
-    
+
     def test_is_float(self):
         """
         Testing function is_float

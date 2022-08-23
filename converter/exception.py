@@ -6,7 +6,8 @@ class TemperatureError(Exception):
         self.temperature = temperature
 
     def __str__(self):
-        return f"Temperature {self.temperature} should not be lower than absolute zero {self.absolute_zero}"
+        return f"Temperature {self.temperature} should not be " \
+               f"lower than absolute zero {self.absolute_zero}"
 
 
 class ConverterError(Exception):

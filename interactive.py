@@ -9,7 +9,10 @@ def get_interactive_function(answer: str) -> tuple:
     if answer in QUIT_INPUT:
         quit()
     if answer in CELSIUM_INPUT:
-        return celsius_to_fahrenheit, input("Provide temperature in Celsius: ")
+        return celsius_to_fahrenheit, \
+               input("Provide temperature in Celsius: ")
+
     if answer in FAH_INPUT:
-        return fahrenheit_to_celsius, input("Provide temperature in Fahrenheit: ")
+        return fahrenheit_to_celsius, \
+               input("Provide temperature in Fahrenheit: ")
     raise ValueError("Provide correct scale")

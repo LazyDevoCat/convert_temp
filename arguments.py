@@ -22,7 +22,7 @@ def parse_arguments():
         "-f", "--fahrenheit", action="store_true",
         help="use flag -f(--fahrenheit) and provide one value for converting"
     )
-    
+
     scale_group.add_argument(
         "-c", "--celsius", action="store_true",
         help="use flag -c(--celsius) and provide one value for converting"

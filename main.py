@@ -47,5 +47,4 @@ if answer in (CELSIUM_INPUT + FAH_INPUT):
         print(f"ERROR: {temperature} is not convertible to float type")
 
 
-
 # if __name__ == '__main__':
