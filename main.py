@@ -1,86 +1,51 @@
 # -*- encoding: utf-8 -*-
-import argparse
 import sys
-from converter.converter import fahrenheit_to_celsius, celsius_to_fahrenheit
+
+from arguments import parse_arguments
+from converter.converter import get_convertor_function
+from converter.exception import TemperatureError, ConverterError
 from converter.utils import is_float
+from interactive import get_interactive_function, CELSIUM_INPUT, FAH_INPUT, QUIT_INPUT
 
-CELSIUM_INPUT = ['celsius', 'cels', 'cel', '-c', 'c']
-FAH_INPUT = ['fahrenheit', 'fahren', 'far', '-f', 'f']
-QUIT_INPUT = ['quit', 'q', 'exit']
+args = parse_arguments()
 
-parser = argparse.ArgumentParser(
-    description="Take temperature in Fahrenheit(Celsius) "
-                "and convert to Celsius(Fahrenheit)"
-)
 
-parser.add_argument(
-    "-v", "--verbose", help="It just return your argument"
-)
-
-parser.add_argument(
-    "-f", "--fahrenheit", type=float,
-    help="Take temperature in Fahrenheit and convert to Celsius"
-)
-parser.add_argument(
-    "-c", "--celsius", type=float,
-    help="Take temperature in Celsius and convert to Fahrenheit"
-)
-
-# parser.add_argument(
-#     "temperature", type=float,
-#     help="temperature", action="store", nargs='?'
-# )
-#
-# scale_group = parser.add_mutually_exclusive_group(required=False)
-#
-# scale_group.add_argument(
-#     "-f", "--fahrenheit", action="store_true",
-#     help="use flag -f(--fahrenheit) and provide one value for converting"
-# )
-#
-# scale_group.add_argument(
-#     "-c", "--celsius", action="store_true",
-#     help="use flag -c(--celsius) and provide one value for converting"
-# )
-
-args = parser.parse_args()
-
-if sys.argv[3:]:
-    print("IT IS PROHIBITED!")
-    quit()
 if args.verbose:
-    print(f"You choose {sys.argv[1]} "
-          f"and provide: {sys.argv[2]}")
+    print(str(sys.argv) + " It's verbose argument")
+
+
+def get_temperature(args) -> float:
+    if args.temperature is None:
+        raise ConverterError("Provide value for converting")
+    return args.temperature
+
+
+if args.fahrenheit or args.celsius:
+    converter_function = get_convertor_function(args.fahrenheit, args.celsius)
+    try:
+        temperature = get_temperature(args)
+        print(converter_function(temperature))
+    except (TemperatureError, ConverterError) as error:
+        print(f"{error}")
     quit()
-if args.fahrenheit is not None:
-    # print(f"{args.fahrenheit} Fahrenheit in the logic")
-    print(fahrenheit_to_celsius(args.fahrenheit))
-    quit()
-if args.celsius is not None:
-    print(celsius_to_fahrenheit(args.celsius))
-    quit()
-else:
+
+
+answer = str(input("What temperature you want convert?: ")).lower()
+while answer not in (CELSIUM_INPUT + FAH_INPUT + QUIT_INPUT):
     answer = str(input("What temperature you want convert?: ")).lower()
 
-    while answer not in (CELSIUM_INPUT + FAH_INPUT + QUIT_INPUT):
-        answer = str(input("What temperature you want convert?: ")).lower()
 
-    if answer in QUIT_INPUT:
+if answer in (CELSIUM_INPUT + FAH_INPUT):
+    conversion_function, temperature = get_interactive_function(answer)
+    if is_float(temperature):
+        try:
+            print(conversion_function(float(temperature)))
+        except TemperatureError as error:
+            print(f"{error}")
         quit()
+    else:
+        print(f"ERROR: {temperature} is not convertible to float type")
 
-    if answer in CELSIUM_INPUT:  # Convert from Celsius to Fahrenheit
-        celsius = input("Provide temperature in Celsius: ")
-        if is_float(celsius):
-            print(celsius_to_fahrenheit(float(celsius)))
-        else:
-            print(f"ERROR: {celsius} is not convertible to float type")
-
-    if answer in FAH_INPUT:  # Convert from Fahrenheit to Celsius
-        fahrenheit = input("Provide temperature in Fahrenheit: ")
-        if is_float(fahrenheit):
-            print(fahrenheit_to_celsius(float(fahrenheit)))
-        else:
-            print(f"ERROR: {fahrenheit} is not convertible to float type")
 
 
 # if __name__ == '__main__':
