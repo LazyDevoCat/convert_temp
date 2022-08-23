@@ -5,6 +5,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [1.1.0](https://github.com/MariaMaximova/convert_temp/tree/v1.1.0) - 2022 - August - 23
 ### Added
 - cnagelog.md file with description all versions.
 - Issues templates in [GitHub](https://github.com/MariaMaximova/convert_temp/issues/new/choose) page.
