@@ -5,7 +5,8 @@ from arguments import parse_arguments
 from converter.converter import get_convertor_function
 from converter.exception import TemperatureError, ConverterError
 from converter.utils import is_float
-from interactive import get_interactive_function, CELSIUM_INPUT, FAH_INPUT, QUIT_INPUT
+from interactive import get_interactive_function, \
+    CELSIUM_INPUT, FAH_INPUT, QUIT_INPUT
 
 args = parse_arguments()
 

@@ -45,7 +45,7 @@ class test_temperature_conversion(unittest.TestCase):
         self.assertTrue(is_float(-0.0))
         self.assertTrue(is_float(10))
         self.assertTrue(is_float(-10.55))
-        
+
         self.assertFalse(is_float("asa"))
         self.assertFalse(is_float("ass1000asa"))
         self.assertTrue(is_float("10.0"))
