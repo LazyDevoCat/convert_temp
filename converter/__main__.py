@@ -1,12 +1,11 @@
 # -*- encoding: utf-8 -*-
 import sys
 
-from arguments import parse_arguments
-from converter.converter import get_convertor_function
-from converter.exception import TemperatureError, ConverterError
-from converter.utils import is_float
-from interactive import get_interactive_function, \
-    CELSIUM_INPUT, FAH_INPUT, QUIT_INPUT
+from .arguments import parse_arguments
+from .converter import get_convertor_function
+from .exception import TemperatureError, ConverterError
+from .utils import is_float
+from .interactive import get_interactive_function, CELSIUM_INPUT, FAH_INPUT, QUIT_INPUT
 
 args = parse_arguments()
 
@@ -46,6 +45,3 @@ if answer in (CELSIUM_INPUT + FAH_INPUT):
         quit()
     else:
         print(f"ERROR: {temperature} is not convertible to float type")
-
-
-# if __name__ == '__main__':

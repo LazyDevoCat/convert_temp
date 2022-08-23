@@ -1,9 +1,7 @@
 # -*- encoding: utf-8 -*-
 import unittest
 
-from converter.converter import celsius_to_fahrenheit, fahrenheit_to_celsius
-from converter.utils import is_float
-from converter.exception import TemperatureError
+from converter import *
 
 
 class test_temperature_conversion(unittest.TestCase):

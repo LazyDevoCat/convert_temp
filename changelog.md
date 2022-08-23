@@ -16,10 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - file exception.py with extended errors.
 - file interactive.py with logic in interactive mode.
 - file arguments.py with logic in CLI mode.
+- How to use in Readme.md.
 
 ### Changed
 - Naming of methods.
 - decoupling logic from main.py file to two separate files interactive.py and arguments.py.
+- Refactoring project structure.
 
 ### Fixed
 - Some grammatical issues and typos.

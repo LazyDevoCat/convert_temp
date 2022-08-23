@@ -1,4 +1,4 @@
-from converter.converter import celsius_to_fahrenheit, fahrenheit_to_celsius
+from .converter import celsius_to_fahrenheit, fahrenheit_to_celsius
 
 CELSIUM_INPUT = ['celsius', 'cels', 'cel', '-c', 'c']
 FAH_INPUT = ['fahrenheit', 'fahren', 'far', '-f', 'f']

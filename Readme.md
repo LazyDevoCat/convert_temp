@@ -15,19 +15,29 @@ This is a cli tool for converting temperature from Celsius to Fahrenheit and vis
 ### Tech
 This project written on [Python](https://www.python.org/) v3.10.  
 
-### How use TDB
+### How use
 
-#### Linux
+#### Linux & MacOS
 
-TDB
+```bash
+python -m converter
+python -m converter -f 90
+python -m converter -c 30
+``` 
 
 #### Windows
 
-TDB
+```PowerShell
+python -m converter
+python -m converter -f 90
+python -m converter -c 30
+``` 
 
 #### Unit tests
 For launching unit tests in root of the project:  
-`python -m unittest`
+```
+python -m unittest
+```
 
 
 ### License
