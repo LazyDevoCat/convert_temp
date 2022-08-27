@@ -1,0 +1,17 @@
+# This is a basic workflow
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+
+name: release
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+

@@ -1,5 +1,7 @@
 import argparse
 
+from converter import *
+
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
@@ -29,3 +31,20 @@ def parse_arguments():
     )
 
     return parser.parse_args()
+
+
+class ArgumentContext(ConverterContext):
+    def __init__(self):
+        self.args = parse_arguments()
+
+    def get_converter_function(self):
+        if self.args.fahrenheit:
+            return fahrenheit_to_celsius
+        if self.args.celsius:
+            return celsius_to_fahrenheit
+        raise ConverterError("Can not find suitable convertor function")
+
+    def get_temperature(self):
+        if self.args.temperature is None:
+            raise ConverterError("Provide value for converting")
+        return self.args.temperature

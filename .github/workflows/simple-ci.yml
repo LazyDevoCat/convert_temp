@@ -47,5 +47,6 @@ jobs:
 
       - name: Run test
         run: |
-          date -R >> artifact.txt
-          python -m unittest >> artifact.txt
+          python -m unittest 
+
+  
