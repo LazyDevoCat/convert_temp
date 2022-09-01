@@ -10,8 +10,7 @@ _https://www.pythontutorial.net/python-oop/python-custom-exception/
 """
 from abc import ABC, abstractmethod
 
-from . import TemperatureError, ConverterError
-from .arguments import parse_arguments
+from converter.exception import TemperatureError, ConverterError
 
 ABSOLUTE_ZERO_FAR = -459.67
 ABSOLUTE_ZERO_CEL = -273.15

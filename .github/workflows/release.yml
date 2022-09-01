@@ -1,17 +1,27 @@
 # This is a basic workflow
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
-name: release
-
-on:
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1
+#name: release
+#
+#on:
+#  pull_request_review:
+#    branches: [ "main" ]
+#    types: [submitted]
+#
+#jobs:
+#  publish:
+#    if: github.event.review.state == 'approved'
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Create release
+#        id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.github_token }}
+#          with:
+#            tag_name: ${{ github.run_number }}
+#            release_name: Release ${{ github.run_number }}
+#            body: New release for ${{ github.run_number }}.
+#            draft: false
+#            prerelease: false
 

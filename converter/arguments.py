@@ -1,6 +1,7 @@
 import argparse
 
-from converter import *
+from converter.converter import ConverterContext, fahrenheit_to_celsius, celsius_to_fahrenheit
+from converter.exception import ConverterError
 
 
 def parse_arguments():
