@@ -29,16 +29,16 @@ class InteractiveContext(ConverterContext):
         answer = str(input("What temperature you want convert?: ")).lower()
         while answer not in (CELSIUS_INPUT + FAH_INPUT + QUIT_INPUT):
             answer = str(input("What temperature you want convert?: ")).lower()
-        
+
         if answer in QUIT_INPUT:
             quit()
         if answer in CELSIUS_INPUT:
             return celsius_to_fahrenheit
-        
+
         if answer in FAH_INPUT:
             return fahrenheit_to_celsius
         raise ValueError("Provide correct scale")
-    
+
     def get_temperature(self):
         temperature = input("Provide temperature: ")
         if not is_float(temperature):
