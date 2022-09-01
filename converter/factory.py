@@ -14,4 +14,3 @@ class ConvertorContextFactory(object):
     def has_necessary_arguments(self) -> bool:
         argument = parse_arguments()
         return argument.temperature is not None and (argument.fahrenheit or argument.celsius)
-
