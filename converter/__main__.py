@@ -8,5 +8,5 @@ converter_function = converter_context.get_converter_function()
 try:
     temperature = converter_context.get_temperature()
     print(converter_function(temperature))
-except (TemperatureError, ConverterError) as error:
+except (TemperatureError, ConverterError, ValueError) as error:
     print(f"{error}")

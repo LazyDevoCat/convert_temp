@@ -42,5 +42,5 @@ class InteractiveContext(ConverterContext):
     def get_temperature(self):
         temperature = input("Provide temperature: ")
         if not is_float(temperature):
-            raise quit(ValueError(f"ERROR: {temperature} is not convertible to float type"))
+            raise ValueError(f"ERROR: {temperature} is not convertible to float type")
         return float(temperature)
