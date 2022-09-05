@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 
 from converter.exception import TemperatureError, ConverterError
-from converter.factory import ConvertorContextFactory
+from converter.factory import ConverterContextFactory
 
-converter_context = ConvertorContextFactory().create()
-converter_function = converter_context.get_converter_function()
+converter_context = ConverterContextFactory().create()
+converter_function = converter_context.get_converter()
 try:
     temperature = converter_context.get_temperature()
     print(converter_function(temperature))

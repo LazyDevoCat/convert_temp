@@ -51,7 +51,7 @@ def get_convertor_function(fahrenheit: bool, celsius: bool) -> callable:
 class ConverterContext(ABC):
 
     @abstractmethod
-    def get_converter_function(self):
+    def get_converter(self):
         pass
 
     @abstractmethod

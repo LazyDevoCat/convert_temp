@@ -38,12 +38,12 @@ class ArgumentContext(ConverterContext):
     def __init__(self):
         self.args = parse_arguments()
 
-    def get_converter_function(self):
+    def get_converter(self):
         if self.args.fahrenheit:
             return fahrenheit_to_celsius
         if self.args.celsius:
             return celsius_to_fahrenheit
-        raise ConverterError("Can not find suitable convertor function")
+        raise ConverterError("Can not find suitable converter function")
 
     def get_temperature(self):
         if self.args.temperature is None:

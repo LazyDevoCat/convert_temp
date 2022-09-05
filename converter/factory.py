@@ -3,7 +3,7 @@ from converter.converter import ConverterContext
 from converter.interactive import InteractiveContext
 
 
-class ConvertorContextFactory(object):
+class ConverterContextFactory(object):
 
     def create(self) -> ConverterContext:
         if self.has_necessary_arguments():
