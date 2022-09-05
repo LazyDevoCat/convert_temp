@@ -35,11 +35,14 @@ python -m converter -c 30
 
 #### Unit tests
 For launching unit tests in root of the project:  
+
+Windows:
 ```PowerShell
 python -m unittest
 ```
 
-```bash
+Linux:
+```bash 
 python3 -m unittest
 ```
 
