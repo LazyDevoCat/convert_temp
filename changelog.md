@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed 
 - Refactoring project structure.
 
-- ### Fixed
+### Fixed
 - Some grammatical issues and typos.
 
 ## [1.1.0](https://github.com/MariaMaximova/convert_temp/tree/v1.1.0) - 2022 - August - 23
