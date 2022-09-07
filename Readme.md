@@ -46,6 +46,18 @@ Linux:
 python3 -m unittest
 ```
 
+## Contributing
 
-### License
+Contributions are always welcome!
+
+See `docs/CONTRIBUTING.md` for ways to get started.
+
+## Authors
+
+- [@LazyDevoCat](https://github.com/LazyDevoCat)
+- [@OleksiiBulba](https://github.com/OleksiiBulba)
+
+
+
+## License
 [MIT](https://choosealicense.com/licenses/mit/) 
