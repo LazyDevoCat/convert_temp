@@ -1,11 +1,21 @@
-target: hello run clean
+target: virtualenv run tests clean
 
-hello:
-	echo "Hello, this is run from Makefile"
+VENV=mkfike_env
+PYTHON=$(VENV)/bin/python
 
-run:
-	python3 -m converter -c 30
-	python3 -m converter -f -925
+virtualenv:
+	@python3 -m venv $(VENV)
+	@. $(VENV)/bin/activate
+
+run: virtualenv
+	$(PYTHON) -m converter -c 30
+	$(PYTHON) -m converter -f -925
+
+tests: virtualenv
+	@echo "Run Tests"
+	@$(PYTHON) -m unittest
 
 clean:
-	rm -rf __pycache__
+	@rm -rf __pycache__
+	@rm -rf $(VENV)
+	@echo "Clearing is done"
