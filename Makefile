@@ -1,15 +1,14 @@
-target: virtualenv run tests clean
+target: virtualenv tests clean
 
 VENV=mkfike_env
 PYTHON=$(VENV)/bin/python
 
-virtualenv:
-	@python3 -m venv $(VENV)
-	@. $(VENV)/bin/activate
+PYTHON3=$(if [ $(which python &>/dev/null | echo $?) -eq 0 ]; then PYTHON3=$python; else PYTHON3=$python3; fi)
 
-run: virtualenv
-	$(PYTHON) -m converter -c 30
-	$(PYTHON) -m converter -f -925
+virtualenv:
+	@PYTHON3 -m venv $(VENV)
+	@. $(VENV)/bin/activate
+	@echo "$(VENV) was activated"
 
 tests: virtualenv
 	@echo "Run Tests"
